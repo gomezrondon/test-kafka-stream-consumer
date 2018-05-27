@@ -7,7 +7,12 @@ spring:
     stream:
       kafka:
         binder:
-          zkNodes: 192.168.99.100
           defaultZkPort: 2181
           brokers: 192.168.99.100
           defaultBrokerPort: 9092
+  kafka:
+    consumer:
+      group-id: group_x
+      bootstrap-servers: 192.168.99.100:9092
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: com.gomezrondon.kafka.testkafkastreamconsumer.PageViewEventDeserial
